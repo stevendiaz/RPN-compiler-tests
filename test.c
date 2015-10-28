@@ -16,5 +16,5 @@ void testFunction() {
 
 
 int main() {
-        testFunction();
+  testFunction();
 }
