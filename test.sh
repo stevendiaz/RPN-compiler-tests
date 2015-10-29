@@ -88,7 +88,7 @@ gcc -o tester34 test.c output34.s
 #Run tests
 ./tester15
 echo ANSWER: 450
-/tester16
+./tester16
 echo ANSWER: 18
 ./tester17
 echo ANSWER: 13
