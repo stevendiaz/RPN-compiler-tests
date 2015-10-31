@@ -37,17 +37,17 @@ echo
 echo Variables, X:1 Y:2 Z:3
 ./compiler 50 50 50 50 50 50 50 50 50 + + + + + + + + > output15.s
 ./compiler x x x y y y z z z + + + + + + + + > output16.s
-./compiler 2 5 '*' 3 + > output17.s
+./compiler 2 5 "*" 3 + > output17.s
 ./compiler 1 2 + 3 + 4 + 5 + 6 + 7 + > output18.s
-./compiler 3 4 5 + '*' > output19.s
-./compiler 10 2 8 '*' + 3 - > output20.s
+./compiler 3 4 5 + "*" > output19.s
+./compiler 10 2 8 "*" + 3 - > output20.s
 ./compiler 2147483647 2147483647 2147483647 + + > output21.s
 ./compiler 9223372036854775807 9223372036854775807 + > output22.s
 ./compiler 9223372036854775807 1 + > output23.s
 ./compiler -9223372036854775808 -9223372036854775808 + > output24.s
-./compiler -11 -11 '*' > output25.s
-./compiler 5 6 - 12 3 + '*' 2 - > output26.s
-./compiler 3 2 + 17 4 - '*' > output27.s
+./compiler -11 -11 "*" > output25.s
+./compiler 5 6 - 12 3 + "*" 2 - > output26.s
+./compiler 3 2 + 17 4 - "*" > output27.s
 ./compiler 1 1 + > output28.s
 ./compiler 3 4 7 + "*" > output29.s
 ./compiler 8 9 + 4 3 10 "*" + "*" 5 - > output30.s
@@ -57,20 +57,20 @@ echo Variables, X:1 Y:2 Z:3
 ./compiler z y x + + > output34.s
 ./compiler 0 0 0 "*" "*" 0 0 0 "*" "*" 0 0 0 "*" "*" "*" "*" > output35.s
 ./compiler 0 0 + 0 0 0 "*" + "*" 0 - > output36.s
-./compiler 0 0 0 0 0 + + - * 0 0 0 0 0 - - + + 0 0 0 0 0 * + + - - - - > output37.s
-./compiler 1 1 1 * * 1 1 1 * * 1 1 1 * * * * > output38.s
-./compiler 1 1 + 1 1 1 * + * 1 - > output39.s
-./compiler 1 1 1 1 1 + + - * 1 1 1 1 1 - - + + 1 1 1 1 1 * + + - - - - > output40.s
-./compiler -1 -1 -1 * * -1 -1 -1 * * -1 -1 -1 * * * * > output41.s
-./compiler -1 -1 + -1 -1 -1 * + * -1 - > output42.s
-./compiler -1 -1 -1 -1 -1 + + - * -1 -1 -1 -1 -1 - - + + -1 -1 -1 -1 -1 * + + - - - > output43.s
-./compiler 86457 86457 86457 * * 86457 86457 86457 * * 86457 86457 86457 * * * * > output44.s
-./compiler 86457 86457 + 86457 86457 86457 * + * 86457 - > output44.s
-./compiler 86457 86457 86457 86457 86457 + + - * 86457 86457 86457 86457 86457 - - + + 86457 86457 86457 86457 86457 * + + - - - > output45.s
-./compiler 86457 86457 + 86457 86457 86457 * + * 86457 - > output46.s
-./compiler -348901 -348901 -348901 * * -348901 -348901 -348901 * * -348901 -348901 -348901 * * * * > output47.s
-./compiler -348901 -348901 + -348901 -348901 -348901 * + * -348901 - > output48.s
-./compiler -348901 -348901 -348901 -348901 -348901 + + - * -348901 -348901 -348901 -348901 -348901 - - + + -348901 -348901 -348901 -348901 -348901 * + + - - - > output49.s
+./compiler 0 0 0 0 0 + + - "*" 0 0 0 0 0 - - + + 0 0 0 0 0 "*" + + - - - > output37.s
+./compiler 1 1 1 "*" "*" 1 1 1 "*" "*" 1 1 1 "*" "*" "*" "*" > output38.s
+./compiler 1 1 + 1 1 1 "*" + "*" 1 - > output39.s
+./compiler 1 1 1 1 1 + + - "*" 1 1 1 1 1 - - + + 1 1 1 1 1 "*" + + - - - > output40.s
+./compiler -1 -1 -1 "*" "*" -1 -1 -1 "*" "*" -1 -1 -1 "*" "*" "*" "*" > output41.s
+./compiler -1 -1 + -1 -1 -1 "*" + "*" -1 - > output42.s
+./compiler -1 -1 -1 -1 -1 + + - "*" -1 -1 -1 -1 -1 - - + + -1 -1 -1 -1 -1 "*" + + - - - > output43.s
+./compiler 86457 86457 86457 "*" "*" 86457 86457 86457 "*" "*" 86457 86457 86457 "*" "*" "*" "*" > output44.s
+./compiler 86457 86457 + 86457 86457 86457 "*" + "*" 86457 - > output45.s
+./compiler 86457 86457 86457 86457 86457 + + - "*" 86457 86457 86457 86457 86457 - - + + 86457 86457 86457 86457 86457 "*" + + - - - > output46.s
+./compiler 86457 86457 + 86457 86457 86457 "*" + "*" 86457 - > output47.s
+./compiler -348901 -348901 -348901 "*" "*" -348901 -348901 -348901 "*" "*" -348901 -348901 -348901 "*" "*" "*" "*" > output48.s
+./compiler -348901 -348901 + -348901 -348901 -348901 "*" + "*" -348901 - > output49.s
+./compiler -348901 -348901 -348901 -348901 -348901 + + - "*" -348901 -348901 -348901 -348901 -348901 - - + + -348901 -348901 -348901 -348901 -348901 "*" + + - - - > output50.s
 
 #Make sure to adjust loop when adding tests
 for i in `seq 15 49`;
@@ -114,7 +114,7 @@ gcc -o tester46 test.c output46.s
 gcc -o tester47 test.c output47.s
 gcc -o tester48 test.c output48.s
 gcc -o tester49 test.c output49.s
-
+gcc -o tester50 test.c output50.s
 
 #Run tests
 ./tester15
@@ -182,10 +182,12 @@ echo ANSWER: 1292514738511227
 ./tester46
 echo ANSWER: -22424784375
 ./tester47
-echo ANSWER: -1598232911544453957
+echo ANSWER: 1292514738511227
 ./tester48
-echo ANSWER: -84944525263188899
+echo ANSWER: -1598232911544453957
 ./tester49
+echo ANSWER: -84944525263188899
+./tester50
 echo ANSWER: -365194327799
 
 #Delete extraneous test files
