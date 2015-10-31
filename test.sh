@@ -55,10 +55,25 @@ echo Variables, X:1 Y:2 Z:3
 ./compiler 1 2 3 4 "*" - 5 6 7 + + - "*" 8 9 "*" + > output32.s
 ./compiler x y z + + > output33.s
 ./compiler z y x + + > output34.s
-
+./compiler 0 0 0 "*" "*" 0 0 0 "*" "*" 0 0 0 "*" "*" "*" "*" > output35.s
+./compiler 0 0 + 0 0 0 "*" + "*" 0 - > output36.s
+./compiler 0 0 0 0 0 + + - * 0 0 0 0 0 - - + + 0 0 0 0 0 * + + - - - - > output37.s
+./compiler 1 1 1 * * 1 1 1 * * 1 1 1 * * * * > output38.s
+./compiler 1 1 + 1 1 1 * + * 1 - > output39.s
+./compiler 1 1 1 1 1 + + - * 1 1 1 1 1 - - + + 1 1 1 1 1 * + + - - - - > output40.s
+./compiler -1 -1 -1 * * -1 -1 -1 * * -1 -1 -1 * * * * > output41.s
+./compiler -1 -1 + -1 -1 -1 * + * -1 - > output42.s
+./compiler -1 -1 -1 -1 -1 + + - * -1 -1 -1 -1 -1 - - + + -1 -1 -1 -1 -1 * + + - - - > output43.s
+./compiler 86457 86457 86457 * * 86457 86457 86457 * * 86457 86457 86457 * * * * > output44.s
+./compiler 86457 86457 + 86457 86457 86457 * + * 86457 - > output44.s
+./compiler 86457 86457 86457 86457 86457 + + - * 86457 86457 86457 86457 86457 - - + + 86457 86457 86457 86457 86457 * + + - - - > output45.s
+./compiler 86457 86457 + 86457 86457 86457 * + * 86457 - > output46.s
+./compiler -348901 -348901 -348901 * * -348901 -348901 -348901 * * -348901 -348901 -348901 * * * * > output47.s
+./compiler -348901 -348901 + -348901 -348901 -348901 * + * -348901 - > output48.s
+./compiler -348901 -348901 -348901 -348901 -348901 + + - * -348901 -348901 -348901 -348901 -348901 - - + + -348901 -348901 -348901 -348901 -348901 * + + - - - > output49.s
 
 #Make sure to adjust loop when adding tests
-for i in `seq 15 34`;
+for i in `seq 15 49`;
 do
     as --64 output$i.s
 done
@@ -84,6 +99,22 @@ gcc -o tester31 test.c output31.s
 gcc -o tester32 test.c output32.s
 gcc -o tester33 test.c output33.s
 gcc -o tester34 test.c output34.s
+gcc -o tester35 test.c output35.s
+gcc -o tester36 test.c output36.s
+gcc -o tester37 test.c output37.s
+gcc -o tester38 test.c output38.s
+gcc -o tester39 test.c output39.s
+gcc -o tester40 test.c output40.s
+gcc -o tester41 test.c output41.s
+gcc -o tester42 test.c output42.s
+gcc -o tester43 test.c output43.s
+gcc -o tester44 test.c output44.s
+gcc -o tester45 test.c output45.s
+gcc -o tester46 test.c output46.s
+gcc -o tester47 test.c output47.s
+gcc -o tester48 test.c output48.s
+gcc -o tester49 test.c output49.s
+
 
 #Run tests
 ./tester15
@@ -126,6 +157,36 @@ echo ANSWER: 44
 echo ANSWER: 6, dependent on variables
 ./tester34
 echo ANSWER: 6, dependent on variables
+./tester35
+echo ANSWER: 0
+./tester36
+echo ANSWER: 0
+./tester37
+echo ANSWER: 0
+./tester38
+echo ANSWER: 1
+./tester39
+echo ANSWER: 3
+./tester40
+echo ANSWER: -7
+./tester41
+echo ANSWER: -1
+./tester42
+echo ANSWER: 1
+./tester43
+echo ANSWER: 1
+./tester44
+echo ANSWER: -7736030106824560519
+./tester45
+echo ANSWER: 1292514738511227
+./tester46
+echo ANSWER: -22424784375
+./tester47
+echo ANSWER: -1598232911544453957
+./tester48
+echo ANSWER: -84944525263188899
+./tester49
+echo ANSWER: -365194327799
 
 #Delete extraneous test files
 rm error*
