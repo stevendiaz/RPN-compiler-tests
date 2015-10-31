@@ -120,7 +120,7 @@ gcc -o tester50 test.c output50.s
 ./tester15
 echo ANSWER: 450
 ./tester16
-echo ANSWER: 18
+echo ANSWER: 18, dependent on variables
 ./tester17
 echo ANSWER: 13
 ./tester18
